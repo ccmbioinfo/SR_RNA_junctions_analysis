@@ -1,0 +1,38 @@
+resources:
+  gtf: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38.104.ercc_sirv.gtf
+  fasta: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38_sirv_ercc.fasta
+  refflat: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38.104.ercc_sirv.refflat
+  gtex_db: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/hg38_gtex_data.db
+  star_index: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/star_index
+  rsem_index: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/rsem_index/rsem_index
+  fai: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38_sirv_ercc.fasta.fai
+  tx_db: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38_sirv_ercc.db
+  refseq_txdb: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/hg38.refGene.UCSC.txdb
+  junctions: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/star_index/sjdbList.fromGTF.out.tab
+  exons_bed: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/LL_sortedGRCh38.exons.bed
+  spikeins: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/sirv_ercc_conc.csv
+  collapsed_gtf: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/Homo_sapiens.GRCh38.collapsed.gtf
+  ribo_int: /hpf/projects/dig2/acelik_analysis/clinical_pipeline/genomes/hg38/LL_rRNA.interval_list
+executables:
+  picard: /hpf/tools/centos6/picard-tools/2.18.0/picard.jar
+  rnaseqc: /hpf/projects/dig2/huayun/tools/rnaseqc.v2.3.5.linux
+  STAR_modulefile: /hpf/tools/centos6/modulefiles/star/2.7.0f
+  python_modulefile: /hpf/largeprojects/ccmbio/yliang/clinical_pipeline/pipeline3.8.0
+  RSEM_modulefile: /hpf/tools/centos6/modulefiles/rsem/1.3.3
+  fastp: /hpf/projects/dig2/huayun/tools/fastp
+script_parameters:
+  trimming: 'TRUE'
+  junction_cutoff: 5
+  junction_outlier_frac: 0.3
+  junction_outlier_mean_ratio: 1.25
+  junction_novel_ratio: 0.02
+  junction_novel_frac: 0.02
+  junction_missing_ratio: 0.05
+  junction_missing_gtex_ratio: 0.1
+  junction_missing_gtex_frac: 0.98
+  junction_zscore_cutoff: 3
+  junction_fraction_cutoff: 0.02
+  refflat_ngenes: 500
+  sum_qc_seq_len: 150
+  sum_qc_tx_len: 111579398
+  sum_qc_out_suffix: ".qcsum.txt"

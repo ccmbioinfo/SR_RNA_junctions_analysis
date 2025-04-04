@@ -1,0 +1,1 @@
+test_sample /path/to/R1.fastq.gz,/path/to/R2.fastq.gz '"Cells - EBV-transformed lymphocytes"' /path/to/the/hpo.txt(if there is a hpo term list)
